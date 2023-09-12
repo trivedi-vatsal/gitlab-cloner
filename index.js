@@ -89,7 +89,7 @@ const gitlabParseGroup = async (id = -1) => {
                     "git clone " +
                       project.http_url_to_repo.replace(
                         "https://",
-                        `https://${username}:${token}`
+                        `https://${username}:${token}@`
                       ) || "",
                 });
               }
