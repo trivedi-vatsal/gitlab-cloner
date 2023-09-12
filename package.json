@@ -1,0 +1,23 @@
+{
+  "name": "gitlab-clones",
+  "version": "1.0.0",
+  "description": "A utility to clone and pull GitLab groups, subgroups, projects based on user access token",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "node index.js"
+  },
+  "author": {
+    "name": "Vatsal Trivedi",
+    "email": "trivedivatsal005@gmail.com",
+    "url": "https://github.com/trivedi-vatsal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trivedi-vatsal/gitlab-cloner.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cli-loading-animation": "^1.0.6"
+  }
+}
