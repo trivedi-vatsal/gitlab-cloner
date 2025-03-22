@@ -2,7 +2,7 @@ const constants = require("./constants");
 const axios = require("axios");
 const fs = require("fs");
 const { loading } = require("cli-loading-animation");
-const { start, stop } = loading("Fecthing..");
+const { start, stop } = loading("Fetching..");
 
 let logger = fs.createWriteStream("projects.json", { flags: "w" });
 
@@ -86,11 +86,10 @@ const gitlabParseGroup = async (id = -1) => {
                   http_url_to_repo: project.http_url_to_repo || "",
                   web_url: project.web_url || "",
                   clone_command:
-                    "git clone " +
-                      project.http_url_to_repo.replace(
-                        "https://",
-                        `https://${username}:${token}@`
-                      ) || "",
+                    project.http_url_to_repo.replace(
+                      "https://",
+                      `https://${username}:${token}@`
+                    ) || "",
                 });
               }
             }

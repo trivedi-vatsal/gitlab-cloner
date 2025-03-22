@@ -1,10 +1,11 @@
-## Gitlab-cloner 
+## Gitlab-cloner
 
 A utility to clone and pull GitLab groups, subgroups, projects based on user access token
 
 ### Installation
 
 Installing from source:
+
 ```bash
 git clone https://github.com/trivedi-vatsal/gitlab-cloner.git
 cd gitlab-cloner
@@ -37,17 +38,22 @@ npm run fetch
 After generating the projects.json file containing the information you mentioned (name, ssh_url_to_repo, http_url_to_repo, web_url, and clone_command), you can use the following command to clone all the repositories listed in the JSON file:
 
 For HTTP URL:
+
 ```bash
-$ cat projects.json | jq ".[].http_url" -r | xargs -I {} git clone {}
+$ cat projects.json | jq ".[].http_url_to_repo" -r | xargs -I {} git clone {}
 ```
 
 For SSH URL:
+
 ```bash
 $ cat projects.json | jq ".[].ssh_url" -r | xargs -I {} git clone {}
 ```
 
+For Clone command
 
-
+```bash
+$ cat projects.json | jq -r ".[].clone_command" | xargs -I {} bash -c {}
+```
 
 ### License
 
